@@ -1,0 +1,49 @@
+{
+  "name": "kg-essencial",
+  "displayName": "KG Essencial",
+  "description": "KG Essencial .lua .js .css .html",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "publisher": "KGEssencial",
+  "icon": "logo.png",
+  "keywords": [
+    "fivem",
+    "lua"
+  ],
+  "galleryBanner": {
+    "color": "#030518",
+    "theme": "dark"
+  },
+  "repository": {
+    "url": "https://github.com/Kingadvent/kg-essencial"
+  },
+  "homepage": "https://github.com/Kingadvent/kg-essencial",
+  "bugs": {
+    "url": "https://github.com/Kingadvent/kg-essencial/issues"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./snippets/lua.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/html.code-snippets"
+      },
+      {
+        "language": "css",
+        "path": "./snippets/css.code-snippets"
+      }
+    ]
+  }
+}

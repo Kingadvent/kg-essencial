@@ -1,0 +1,1 @@
+# KG RESOURCES essencial INFO

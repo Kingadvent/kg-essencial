@@ -1,0 +1,1246 @@
+{
+	"Spawn VRP": {
+		"prefix": "vrp_spawn",
+		"body": [
+			"AddEventHandler('vRP:playerSpawn',function(user_id,source)",
+			"\tlocal source = source",
+			"\tlocal user_id = vRP.getUserId(source)",
+			"\tif user_id then",
+			"\t\t$1",
+			"\tend",
+			"end)",
+		],
+		"description": "Player Spawnar VRP"
+	},
+	"Teleport": {
+		"prefix": "vrp_teleporte",
+		"body": [
+			"vRPclient.teleport(source,$1)",
+		],
+		"description": "Teleport VRP"
+	},
+	"Player Proximo": {
+		"prefix": "vrp_playerproximo",
+		"body": [
+			"local nplayer = vRPclient.nearestPlayers(source,2$1)",
+		],
+		"description": "Player Proximos VRP"
+	},
+	"Player Proximo2": {
+		"prefix": "vrp_playerproximo2",
+		"body": [
+			"local nplayer = vRPclient.nearestPlayer(source,2$1)",
+		],
+		"description": "Player Proximo2 VRP"
+	},
+	"AnimServer": {
+		"prefix": "vrp_animserver",
+		"body": [
+			"vRPclient._playAnim(source,true,{'$1','$2'},true)",
+		],
+		"description": "Animações Server VRP"
+	},
+	"StopServer": {
+		"prefix": "vrp_stopserver",
+		"body": [
+			"vRPclient.stopAnim(source,false)",
+		],
+		"description": "Animações Server VRP"
+	},
+	"StopClient": {
+		"prefix": "vrp_stopclient",
+		"body": [
+			"vRP.stopAnim(false)",
+		],
+		"description": "Animações Server VRP"
+	},
+	"VeiculoProximoClient": {
+		"prefix": "vrp_vehproxclient",
+		"body": [
+			"local vehicle = vRP.getNearVehicle(2$1)",
+		],
+		"description": "Veiculo proximo client"
+	},
+	"VeiculoProximoServer": {
+		"prefix": "vrp_vehproxserver",
+		"body": [
+			"local vehicle = vRPclient.getNearVehicle(source,2$1)",
+		],
+		"description": "Veiculo proximo server"
+	},
+	"DentroVeiculoServer": {
+		"prefix": "vrp_dentrocarroserver",
+		"body": [
+			"vRPclient.inVehicle(source)",
+		],
+		"description": "Se esta dentro do carro"
+	},
+	"CheckCarroServer": {
+		"prefix": "vrp_checkcarserver",
+		"body": [
+			"local vehicle,vehNet,vehPlate,vehName,vehLock,vehBlock,vehHealth,vehModel,vehClass = vRPclient.vehList(source,3$1)",
+		],
+		"description": "Verificar todo o carro",
+	},
+	"CheckCarroClient": {
+		"prefix": "vrp_checkcarclient",
+		"body": [
+			"local vehicle,vehNet,vehPlate,vehName,vehLock,vehBlock,vehHealth,vehModel,vehClass = vRP.vehList(3$1)",
+		],
+		"description": "Verificar todo o carro",
+	},
+	"Perguntar": {
+		"prefix": "vrp_perguntar",
+		"body": [
+			"local ok = vRP.request(source,$1,60)",
+		],
+		"description": "Perguntar pra pessoa?"
+	},
+	"Responder": {
+		"prefix": "vrp_responder",
+		"body": [
+			"local nome = vRP.prompt(source,$1,'')",
+		],
+		"description": "responder uma caixinha"
+	},
+	"RemoveObjetoServer": {
+		"prefix": "vrp_removeobjetoserver",
+		"body": [
+			"vRPclient._removeObjects(source)",
+		],
+		"description": "Remover Obejto Server"
+	},
+	"RemoveObjetoClient": {
+		"prefix": "vrp_removeobjetoclient",
+		"body": [
+			"vRP.removeObjects()",
+		],
+		"description": "Remover Obejto Client"
+	},
+	"VerVida": {
+		"prefix": "vrp_vervida",
+		"body": [
+			"vRPclient.getHealth(source)",
+		],
+		"description": "Ver quanto de vida Server"
+	},
+	"SetVida": {
+		"prefix": "vrp_setvida",
+		"body": [
+			"vRPclient.setHealth(source,400$1)",
+		],
+		"description": "Setar a vida Server"
+	},
+	"AddVida": {
+		"prefix": "vrp_addvida",
+		"body": [
+			"vRPclient.updateHealth(source,15$1)",
+		],
+		"description": "Add a vida Server"
+	},
+	"RemVida": {
+		"prefix": "vrp_remvida",
+		"body": [
+			"vRPclient.downHealth(source,10$1)",
+		],
+		"description": "Remover a Vida Server"
+	},
+	"VerColete": {
+		"prefix": "vrp_vercolete",
+		"body": [
+			"vRPclient.getArmour(source)",
+		],
+		"description": "Ver quanto de colete esta Server"
+	},
+	"SetColete": {
+		"prefix": "vrp_setcolete",
+		"body": [
+			"vRPclient.setArmour(source,200$1)",
+		],
+		"description": "Setar o Colete Server"
+	},
+	"Noclip": {
+		"prefix": "vrp_noclip",
+		"body": [
+			"vRPclient.noClip(source)",
+		],
+		"description": "Ativar Noclip Server"
+	},
+	"SetSound": {
+		"prefix": "vrp_setsound",
+		"body": [
+			"vRPclient.playSound(source,$1,$2)",
+		],
+		"description": "Setar um Som server",
+	},
+	"CheckModeloPlayer": {
+		"prefix": "vrp_checkped",
+		"body": [
+			"local model = vRPclient.getModelPlayer(source)",
+		],
+		"description": "Ver o modelo do Player"
+	},
+	"PegarCord": {
+		"prefix": "vrp_cds",
+		"body": [
+			"local x,y,z = vRPclient.getPositions(source)",
+		],
+		"description": "Ver cordenada do player"
+	},
+	"GetArmas": {
+		"prefix": "vrp_checkarma",
+		"body": [
+			"local weaponsList = vRPclient.getWeapons(source)",
+		],
+		"description": "Ver as arma do player"
+	},
+	"GetArmas2": {
+		"prefix": "vrp_checkarma2",
+		"body": [
+			"local weapons = vRPclient.replaceWeapons(source)",
+		],
+		"description": "Ver as arma do player 2"
+	},
+	"ClearWeapon": {
+		"prefix": "vrp_removearma",
+		"body": [
+			"vRPclient._clearWeapons(source)",
+		],
+		"description": "Remover arma do Player"
+	},
+	"AddWeapon": {
+		"prefix": "vrp_addarma",
+		"body": [
+			"vRPCLIENT.giveWeapons(source,{['WEAPON_PISTOL'] = { ammo = 250 }})",
+		],
+		"description": "Add arma pro Player"
+	},
+	"ClearInventory": {
+		"prefix": "vrp_clearinv",
+		"body": [
+			"vRP.clearInventory(user_id)",
+		],
+		"description": "Limpar Inventario"
+	},
+	"GetSteam": {
+		"prefix": "vrp_pegarsteam",
+		"body": [
+			"local steam = vRP.getSteam(source)",
+		],
+		"description": "Pegar Steam"
+	},
+	"KickPlayer": {
+		"prefix": "vrp_kick",
+		"body": [
+			"vRP.kick(user_id,'Você foi kickado'$1)",
+		],
+		"description": "Kickar o player"
+	},
+	"SetSQLSRV": {
+		"prefix": "vrp_setsrvdata",
+		"body": [
+			"vRP.setSData('custom:$1',json.encode($2))",
+		],
+		"description": "Setar Banco de Dados SRV DATA"
+	},
+	"GetSQLSRV": {
+		"prefix": "vrp_getsrvdata",
+		"body": [
+			"local data = vRP.getSData('custom:$1')",
+			"local sdata = json.decode(data) or {}",
+		],
+		"description": "Pegar Banco de Dados SRV DATA"
+	},
+	"SetWL": {
+		"prefix": "vrp_setwl",
+		"body": [
+			"vRP.isWhitelisted('steam$1')",
+		],
+		"description": "Setar WL"
+	},
+	"SetBan": {
+		"prefix": "vrp_setban",
+		"body": [
+			"vRP.isBanned('steam$1')",
+		],
+		"description": "Setar Ban"
+	},
+	"verGemas": {
+		"prefix": "vrp_getgemas",
+		"body": [
+		  "vRP.getGmsId(user_id)"
+		],
+		"description": "verGemas"
+	},
+	"Remover Gemas": {
+		"prefix": "vrp_remgemas",
+		"body": [
+		  "vRP.remGmsId(user_id,10$1)"
+		],
+		"description": "Remover Gemas"
+	},
+	"Adicionar Gemas": {
+		"prefix": "vrp_addgemas",
+		"body": [
+		  "vRP.addGmsId(user_id,10$1)"
+		],
+		"description": "Adicionar Gemas"
+	},
+	"Return Maconha": {
+		"prefix": "vrp_returnweed",
+		"body": [
+		  "vRP.weedReturn(user_id)"
+		],
+		"description": "Return Maconha"
+	},
+	"Weed Time": {
+		"prefix": "vrp_weedtime",
+		"body": [
+		  "vRP.weedTimer(user_id,10$1)"
+		],
+		"description": "Weed Time"
+	},
+	"Chemical Return": {
+		"prefix": "vrp_chemicalreturn",
+		"body": [
+		  "vRP.chemicalReturn(user_id)"
+		],
+		"description": "Chemical Return"
+	},
+	"Chemical Timer": {
+		"prefix": "vrp_chemicaltimer",
+		"body": [
+		  "vRP.chemicalTimer(user_id,10$1)"
+		],
+		"description": "Chemical Timer"
+	},
+	"Alcool Return": {
+		"prefix": "vrp_alcoolreturn",
+		"body": [
+		  "vRP.alcoholReturn(user_id)"
+		],
+		"description": "Alcool Return"
+	},
+	"Alcool Timer": {
+		"prefix": "vrp_alcooltimer",
+		"body": [
+		  "vRP.alcoholTimer(user_id,10$1)"
+		],
+		"description": "Alcool Timer"
+	},
+	"Get Backpack": {
+		"prefix": "vrp_getbackpack",
+		"body": [
+		  "vRP.getBackpack(user_id)"
+		],
+		"description": "Get Backpack"
+	},
+	"Set Backpack": {
+		"prefix": "vrp_setbackpack",
+		"body": [
+		  "vRP.setBackpack(user_id,50$1)"
+		],
+		"description": "Set Backpack"
+	},
+	"Add Car": {
+		"prefix": "addcar",
+		"body": [
+		  "['car$1'] = { 'car$2',20$3,10$4,'cars' },"
+		],
+		"description": "Add Car"
+	},
+	"Add Car Hash": {
+		"prefix": "addcarhash",
+		"body": [
+		  "[GetHashKey('$1')] = { '$2',false },"
+		],
+		"description": "Add Car Hash"
+	},
+	
+	"Pegar Nome Carro": {
+		"prefix": "vrp_checknomecar",
+		"body": [
+		  "local nomes = vRP.vehicleName('neon$1')"
+		],
+		"description": "Pegar Nome Carro"
+	},
+	"Pegar Bau Carro": {
+		"prefix": "vrp_checkbaucar",
+		"body": [
+		  "local bau = vRP.vehicleChest('neon$1')"
+		],
+		"description": "Pegar Bau Carro"
+	},
+	"Pegar preco carro": {
+		"prefix": "vrp_checkprecocar",
+		"body": [
+		  "local price = vRP.vehiclePrice('neon$1')"
+		],
+		"description": "Pegar preco carro"
+	},
+	"Pegar type carro": {
+		"prefix": "vrp_checktypecar",
+		"body": [
+		  "local type = vRP.vehicleType('neon$1')"
+		],
+		"description": "Pegar type carro"
+	},
+	"Pegar Permissao": {
+		"prefix": "vrp_permissao",
+		"body": [
+		  "vRP.hasPermission(user_id,'$1')"
+		],
+		"description": "Pegar Permissao"
+	},
+	"Pegar numero permissao": {
+		"prefix": "vrp_numpermissao",
+		"body": [
+		  "local perm = vRP.numPermission('$1')"
+		],
+		"description": "Pegar numero permissao"
+	},
+	"insert permisssao": {
+		"prefix": "vrp_addpermissao",
+		"body": [
+		  "vRP.insertPermission(source,'$1')"
+		],
+		"description": "insert permisssao"
+	},
+	"remove permissao": {
+		"prefix": "vrp_rempermissao",
+		"body": [
+		  "vRP.removePermission(source,'$1')"
+		],
+		"description": "remove permissao"
+	},
+	"get Identidade": {
+		"prefix": "vrp_getidentidade",
+		"body": [
+		  "vRP.getUserIdentity(user_id)"
+		],
+		"description": "get Identidade"
+	},
+	"pegar RG": {
+		"prefix": "vrp_pegarrg",
+		"body": [
+		  "vRP.getUserRegistration(user_id)"
+		],
+		"description": "pegar RG"
+	},
+	"pegar Id pelo RG": {
+		"prefix": "vrp_idpelorg",
+		"body": [
+		  "vRP.getUserIdRegistration(registration)"
+		],
+		"description": "pegar Id pelo RG"
+	},
+	"CheckDonoPlaca": {
+		"prefix": "vrp_checkplacadonoserver",
+		"body": [
+			"local plateUser = vRP.getVehiclePlate(vehPlate$1)",
+		],
+		"description": "verificar a placa com o dono server"
+	},
+	"Pegar id pelo celular": {
+		"prefix": "vrp_idpelocelular",
+		"body": [
+		  "vRP.getUserByPhone(phone)"
+		],
+		"description": "Pegar id pelo celular"
+	},
+	"Pegar Numero pelo ID": {
+		"prefix": "vrp_phoneporid",
+		"body": [
+		  "local phone = vRP.getPhone(user_id)"
+		],
+		"description": "Pegar Numero pelo ID"
+	},
+	"criarItem": {
+		"prefix": "vrp_criaritem",
+		"body": [
+		  "vRP.criarItem(index$1,spawn$2,name$3,desc$4,weight$5,durability$6,unity$7)"
+		],
+		"description": "criarItem"
+	},
+	"pegar Spawn Item": {
+		"prefix": "vrp_spawnitem",
+		"body": [
+		  "local body = vRP.itemBodyList(item$1)"
+		],
+		"description": "pegar Spawn Item"
+	},
+	"pegar Index Item": {
+		"prefix": "vrp_indexitem",
+		"body": [
+		  "local index = vRP.itemIndexList(item$1)"
+		],
+		"description": "pegar Index Item"
+	},
+	"pegar Nome Item": {
+		"prefix": "vrp_nomeitem",
+		"body": [
+		  "local name = vRP.itemNameList(item$1)"
+		],
+		"description": "pegar Nome Item"
+	},
+	"pegar Descricao Item": {
+		"prefix": "vrp_descitem",
+		"body": [
+		  "local desc = vRP.itemDescList(item$1)"
+		],
+		"description": "pegar Descricao Item"
+	},
+	"pegar Tipo Item": {
+		"prefix": "vrp_tipoitem",
+		"body": [
+		  "local tipo = vRP.itemTipoList(item$1)"
+		],
+		"description": "pegar Tipo Item"
+	},
+	"pegar Unity item": {
+		"prefix": "vrp_unityitem",
+		"body": [
+		  "local unity = vRP.itemUnityList(item$1)"
+		],
+		"description": "pegar Unity item"
+	},
+	"pegar Economia item": {
+		"prefix": "vrp_economiaitem",
+		"body": [
+		  "local economy = vRP.itemEconomyList(item$1)"
+		],
+		"description": "pegar Economia item"
+	},
+	"pegar Sub Type item": {
+		"prefix": "vrp_subtypeitem",
+		"body": [
+		  "local subtype = vRP.itemSubTypeList(item$1)"
+		],
+		"description": "pegar Sub Type item"
+	},
+	"pegar Transformar item": {
+		"prefix": "vrp_transitem",
+		"body": [
+		  "local trans = vRP.itemTransformList(item$1)"
+		],
+		"description": "pegar Transformar item"
+	},
+	"pegar Durabilidade Item": {
+		"prefix": "vrp_duraitem",
+		"body": [
+		  "local dura = vRP.itemDurabilityList(item$1)"
+		],
+		"description": "pegar Durabilidade Item"
+	},
+	"pegar TypeList item": {
+		"prefix": "vrp_typelistitem",
+		"body": [
+		  "local typelist = vRP.itemTypeList(item$1)"
+		],
+		"description": "pegar TypeList item"
+	},
+	"pegar Ammo Lista Item": {
+		"prefix": "vrp_ammolistaitem",
+		"body": [
+		  "local ammolist = vRP.itemAmmoList(item$1)"
+		],
+		"description": "pegar Ammo Lista Item"
+	},
+	"Pegar peso lista item": {
+		"prefix": "vrp_pesolistaitem",
+		"body": [
+		  "local pesolista = vRP.itemWeightList(item$1)"
+		],
+		"description": "Pegar peso lista item"
+	},
+	"Ver se aguenta carregar": {
+		"prefix": "vrp_checkpesoitem",
+		"body": [
+		  "    if vRP.computeInvWeight(user_id) + vRP.itemWeightList($1) * parseInt($2) <= vRP.getBackpack(user_id) then"
+		],
+		"description": "Ver se aguenta carregar"
+	},
+	"Ver Quantidade Item": {
+		"prefix": "vrp_getitem",
+		"body": [
+		  "local item = vRP.getInventoryItemAmount(user_id,'$1')"
+		],
+		"description": "Ver Quantidade Item"
+	},
+	"ver durabilidade item seu": {
+		"prefix": "vrp_duraiditem",
+		"body": [
+		  "local durability = vRP.getInventoryItemDurability(user_id,'$1')"
+		],
+		"description": "ver durabilidade item seu"
+	},
+	"ganhar item": {
+		"prefix": "vrp_giveitem",
+		"body": [
+		  "vRP.giveInventoryItem(user_id,'$1',1$2,true,slot$3,timestamp$4)"
+		],
+		"description": "ganhar item"
+	},
+	"tirar item": {
+		"prefix": "vrp_tryitem",
+		"body": [
+		  "vRP.tryGetInventoryItem(user_id,'$1',1$2,true,slot$3)"
+		],
+		"description": "tirar item"
+	},
+	"remove item": {
+		"prefix": "vrp_removeitem",
+		"body": [
+		  "vRP.removeInventoryItem(user_id,'$1',1$2,true)"
+		],
+		"description": "remove item"
+	},
+	"criar durabi": {
+		"prefix": "vrp_criardurab",
+		"body": [
+		  "vRP.createDurability('$1')"
+		],
+		"description": "criar durabi"
+	},
+	"tirar Bau": {
+		"prefix": "vrp_trychest",
+		"body": [
+		  "vRP.tryChestItem(user_id,chestData$1,itemName$2,1$3,slot$4)"
+		],
+		"description": "tirar Bau"
+	},
+	"store Chest Item": {
+		"prefix": "vrp_storechestitem",
+		"body": [
+		  "vRP.storeChestItem(user_id,chestData$1,itemName$2,amount$3,chestWeight$4,slot$5)"
+		],
+		"description": "store Chest Item"
+	},
+	"tirar Procurado": {
+		"prefix": "vrp_tirarprocurado",
+		"body": [
+		  "vRP.tirarWanted(user_id)"
+		],
+		"description": "tirar Procurado"
+	},
+	"ver Tempo Procurado": {
+		"prefix": "vrp_timeprocurado",
+		"body": [
+		  "vRP.wantedReturn(user_id)"
+		],
+		"description": "ver Tempo Procurado"
+	},
+	"ver Repouso Tempo": {
+		"prefix": "vrp_timerepouso",
+		"body": [
+		  "vRP.reposeReturn(user_id)"
+		],
+		"description": "ver Repouso Tempo"
+	},
+	"add procurado tempo": {
+		"prefix": "vrp_addprocuradotempo",
+		"body": [
+		  "vRP.wantedTimer(user_id,1$1)"
+		],
+		"description": "add procurado tempo"
+	},
+	"add repouso tempo": {
+		"prefix": "vrp_addrepousotempo",
+		"body": [
+		  "vRP.reposeTimer(user_id,1$1)"
+		],
+		"description": "add repouso tempo"
+	},
+	"pegar info sql": {
+		"prefix": "vrp_getinfosqlid",
+		"body": [
+		  "vRP.getInformation(user_id)"
+		],
+		"description": "pegar info sql"
+	},
+	"pegar info SQL steam": {
+		"prefix": "vrp_getinfosqlsteam",
+		"body": [
+		  "vRP.getInfos(steam)"
+		],
+		"description": "pegar info SQL steam"
+	},
+	"calcular tempo": {
+		"prefix": "vrp_calctempo",
+		"body": [
+		  "vRP.getTimers(seconds)"
+		],
+		"description": "calcular tempo"
+	},
+	"calcular tempo minimo": {
+		"prefix": "vrp_calctempominimo",
+		"body": [
+		  "vRP.getTimersMinimal(seconds)"
+		],
+		"description": "calcular tempo minimo"
+	},
+	"adicionar banco": {
+		"prefix": "vrp_addbanco",
+		"body": [
+		  "vRP.addBank(user_id,amount)"
+		],
+		"description": "adicionar banco"
+	},
+	"setar banco": {
+		"prefix": "vrp_setbanco",
+		"body": [
+		  "vRP.setBank(user_id,amount)"
+		],
+		"description": "setar banco"
+	},
+	"retirar banco": {
+		"prefix": "vrp_rembanco",
+		"body": [
+		  "vRP.delBank(user_id,amount)"
+		],
+		"description": "retirar banco"
+	},
+	"ver banco": {
+		"prefix": "vrp_getbanco",
+		"body": [
+		  "vRP.getBank(user_id)"
+		],
+		"description": "ver banco"
+	},
+	"pagar dinheiro": {
+		"prefix": "vrp_pagar",
+		"body": [
+		  "vRP.paymentBank(user_id,amount)"
+		],
+		"description": "pagar dinheiro"
+	},
+	"Sacar Dinheiro": {
+		"prefix": "vrp_sacarbanco",
+		"body": [
+		  "vRP.withdrawCash(user_id,amount)"
+		],
+		"description": "Sacar Dinheiro"
+	},
+	"setar boleto": {
+		"prefix": "vrp_addboleto",
+		"body": [
+		  "vRP.setInvoice(user_id,1$1,nuser_id,'text$2')"
+		],
+		"description": "setar boleto"
+	},
+	"ver Boleto": {
+		"prefix": "vrp_verboleto",
+		"body": [
+		  "vRP.getInvoice(user_id)"
+		],
+		"description": "ver Boleto"
+	},
+	"ver Meus Boleto": {
+		"prefix": "vrp_vermeusboleto",
+		"body": [
+		  "vRP.getMyInvoice(nuser_id)"
+		],
+		"description": "ver Meus Boleto"
+	},
+	"Setar Multa": {
+		"prefix": "vrp_addmultas",
+		"body": [
+		  "vRP.setFines(user_id,1$1,nuser_id,'text$2')"
+		],
+		"description": "Setar Multa"
+	},
+	"ver Multas": {
+		"prefix": "vrp_vermultas",
+		"body": [
+		  "vRP.getFines(user_id)"
+		],
+		"description": "ver Multas"
+	},
+	"add Salario": {
+		"prefix": "vrp_addsalario",
+		"body": [
+		  "vRP.setSalary(user_id,1$1)"
+		],
+		"description": "add Salario"
+	},
+	"ver Salario": {
+		"prefix": "vrp_versalario",
+		"body": [
+		  "vRP.getSalary(user_id)"
+		],
+		"description": "ver Salario"
+	},
+	"add Sede": {
+		"prefix": "vrp_addsede",
+		"body": [
+		  "vRP.upgradeThirst(user_id,1$1)"
+		],
+		"description": "add Sede"
+	},
+	"add Fome": {
+		"prefix": "vrp_addfome",
+		"body": [
+		  "vRP.upgradeHunger(user_id,1$1)"
+		],
+		"description": "add Fome"
+	},
+	"remover Sede": {
+		"prefix": "vrp_remsede",
+		"body": [
+		  "vRP.downgradeThirst(user_id,1$1)"
+		],
+		"description": "remover Sede"
+	},
+	"remover Fome": {
+		"prefix": "vrp_remfome",
+		"body": [
+		  "vRP.downgradeHunger(user_id,1$1)"
+		],
+		"description": "remover Fome"
+	},
+	"add Strees": {
+		"prefix": "vrp_addstress",
+		"body": [
+		  "vRP.upgradeStress(user_id,1$1)"
+		],
+		"description": "add Strees"
+	},
+	"remover Stress": {
+		"prefix": "vrp_remstress",
+		"body": [
+		  "vRP.downgradeStress(user_id,1$1)"
+		],
+		"description": "remover Stress"
+	},
+	"ver Premium": {
+		"prefix": "vrp_verpremium",
+		"body": [
+		  "vRP.getPremium(user_id)"
+		],
+		"description": "ver Premium"
+	},
+	"ver Premium Steam": {
+		"prefix": "vrp_verpremiumsteam",
+		"body": [
+		  "vRP.getPremium2(steam)"
+		],
+		"description": "ver Premium Steam"
+	},
+	"ver Carro Premium": {
+		"prefix": "vrp_vercarropremium",
+		"body": [
+		  "vRP.getCarPremium(car,user_id)"
+		],
+		"description": "ver Carro Premium"
+	},
+	"Pegar Arma ID": {
+		"prefix": "vrp_verweaponid",
+		"body": [
+		  "vRP.getWeaponsId(user_id)"
+		],
+		"description": "Pegar Arma ID"
+	},
+	"Add Weapon Id": {
+		"prefix": "vrp_addweapon",
+		"body": [
+		  "vRP.addWeaponId(user_id,weapon$1,250$2)"
+		],
+		"description": "Add Weapon Id"
+	},
+	"Remover Weapon Id": {
+		"prefix": "vrp_remweapon",
+		"body": [
+		  "vRP.remAmmoWeaponId(user_id,weapon$1,250$2)"
+		],
+		"description": "Remover Weapon Id"
+	},
+	"add WeebHook": {
+		"prefix": "vrp_addweebhook",
+		"body": [
+		  "vRP.createWeebHook(webhook,message)"
+		],
+		"description": "add WeebHook"
+	},
+	"SQL Pegar": {
+		"prefix": "vrp_sqlpegar",
+		"body": [
+		  "vRP.prepare('vRP/get_vrp_king','SELECT * FROM nome_sql WHERE king = @king')"
+		],
+		"description": "SQL Pegar"
+	},
+	"SQL Pegar2": {
+		"prefix": "vrp_sqlpegar2",
+		"body": [
+		  "vRP.prepare('vRP/get_vrp_king','SELECT id,king FROM sql_nome WHERE king = @king and deleted = 0')"
+		],
+		"description": "SQL Pegar2"
+	},
+	"SQL insert": {
+		"prefix": "vrp_sqlinserir",
+		"body": [
+		  "vRP.prepare(\"vRP/insert_king\",\"INSERT INTO sql_nome(user_id,king) VALUES(@user_id,@king)\")"
+		],
+		"description": "SQL insert"
+	},
+	"SQL Update": {
+		"prefix": "vrp_sqlupdate",
+		"body": [
+		  "vRP.prepare(\"vRP/update_king\",\"UPDATE sql_nome SET king = @king, king2 = @king2 WHERE user_id = @user_id and user_kg = @user_kg\")"
+		],
+		"description": "SQL Update"
+	},
+	"SQL Delete": {
+		"prefix": "vrp_sqldeletar",
+		"body": [
+		  "vRP.prepare(\"vRP/del_king\",\"DELETE FROM sql_nome WHERE user_id = @user_id AND king = @king\")"
+		],
+		"description": "SQL Delete"
+	},
+	"Chat": {
+		"prefix": "vrp_chat",
+		"body": [
+		  "RegisterCommand('$1',function(source,args,rawCommand)",
+		  "\tlocal source = source",
+		  "\tlocal user_id = vRP.getUserId(source)",
+		  "\t\t$2",
+		  "end)"
+		],
+		"description": "Chat"
+	},
+	"botao pelo chat": {
+		"prefix": "vrp_chatbotao",
+		"body": [
+		  "RegisterKeyMapping(\"$1\",\"$2\",\"keyboard\",\"E$3\")"
+		],
+		"description": "botao pelo chat"
+	},
+	"Tunel Server": {
+		"prefix": "vrp_tunelserver",
+		"body": [
+		  "-----------------------------------------------------------------------------------------------------------------------------------------",
+		  "-- VRP",
+		  "-----------------------------------------------------------------------------------------------------------------------------------------",
+		  "local Tunnel = module('vrp','lib/Tunnel')",
+		  "local Proxy = module('vrp','lib/Proxy')",
+		  "vRP = Proxy.getInterface('vRP')",
+		  "vRPclient = Tunnel.getInterface('vRP')",
+		  "-----------------------------------------------------------------------------------------------------------------------------------------",
+		  "-- CONNECTION",
+		  "-----------------------------------------------------------------------------------------------------------------------------------------",
+		  "cnVRP = {}",
+		  "Tunnel.bindInterface('$1',cnVRP)",
+		  "vCLIENT = Tunnel.getInterface('$2')"
+		],
+		"description": "Tunel Server"
+	},
+	"Tunel Client": {
+		"prefix": "vrp_tunelclient",
+		"body": [
+		  "-----------------------------------------------------------------------------------------------------------------------------------------",
+		  "-- VRP",
+		  "-----------------------------------------------------------------------------------------------------------------------------------------",
+		  "local Tunnel = module('vrp','lib/Tunnel')",
+		  "local Proxy = module('vrp','lib/Proxy')",
+		  "vRP = Proxy.getInterface('vRP')",
+		  "-----------------------------------------------------------------------------------------------------------------------------------------",
+		  "-- CONNECTION",
+		  "-----------------------------------------------------------------------------------------------------------------------------------------",
+		  "cnVRP = {}",
+		  "Tunnel.bindInterface('$1',cnVRP)",
+		  "vSERVER = Tunnel.getInterface('$2')"
+		],
+		"description": "Tunel Client"
+	},
+	"Notify Server": {
+		"prefix": "vrp_notifyserve",
+		"body": [
+		  "TriggerClientEvent('Notify',source, 'amarelo$1', '$2',5000)"
+		],
+		"description": "Notify Server"
+	},
+	"Notify Client": {
+		"prefix": "vrp_notifyclient",
+		"body": [
+		  "TriggerEvent('Notify', 'amarelo$1', '$2',5000)"
+		],
+		"description": "Notify Client"
+	},
+	"Default Time": {
+		"prefix": "vrp_timeclient",
+		"body": [
+		  "Citizen.CreateThread(function()",
+		  "\twhile true do",
+		  "\t\tlocal idle = 1000",
+		  "\t\tlocal ped = PlayerPedId()",
+		  "\t\tlocal coords = GetEntityCoords(ped)",
+		  "\t\t$2",
+		  "\t\tCitizen.Wait(idle)",
+		  "\tend",
+		  "end)"
+		],
+		"description": "Default Time Client"
+	},
+	"Default Time2": {
+		"prefix": "vrp_timeclient2",
+		"body": [
+		  "Citizen.CreateThread(function()",
+		  "\twhile true do",
+		  "\t\tlocal idle = 1000",
+		  "\t\tlocal ped = PlayerPedId()",
+		  "\t\tlocal coords = GetEntityCoords(ped)",
+		  "\t\tlocal distance = #(coords - vector3($1))",
+		  "\t\tif distance <= 2 then",
+		  "\t\t\tidle = 5",
+		  "\t\t\t$2",
+		  "\t\tend",
+		  "\t\tCitizen.Wait(idle)",
+		  "\tend",
+		  "end)"
+		],
+		"description": "Default Time Client Distancia"
+	},
+	"Default Time3": {
+		"prefix": "vrp_timeclient3",
+		"body": [
+		  "Citizen.CreateThread(function()",
+		  "\twhile true do",
+		  "\t\tlocal idle = 1000",
+		  "\t\tlocal ped = PlayerPedId()",
+		  "\t\tlocal coords = GetEntityCoords(ped)",
+		  "\t\tfor k,v in pairs($1) do",
+		  "\t\t\tlocal distance = #(coords - vector3(v.x , v.y , v.z))",
+		  "\t\t\tif distance <= 2 then",
+		  "\t\t\t\tidle = 5",
+		  "\t\t\t\t$2",
+		  "\t\t\tend",
+		  "\t\tend",
+		  "\t\tCitizen.Wait(idle)",
+		  "\tend",
+		  "end)"
+		],
+		"description": "Default Time Client Distancia for"
+	},
+	"Default Time Server": {
+		"prefix": "vrp_timeserver",
+		"body": [
+		  "Citizen.CreateThread(function()",
+		  "\twhile true do",
+		  "\t\tlocal idle = 1000",
+		  "\t\t$1",
+		  "\t\tCitizen.Wait(idle)",
+		  "\tend",
+		  "end)"
+		],
+		"description": "Default Time Server"
+	},
+	"Ver se esta no carro": {
+		"prefix": "vrp_dentrodocarroclient",
+		"body": [
+		  "IsPedInAnyVehicle(ped)"
+		],
+		"description": "Ver se esta no carro client"
+	},
+	"Dynamic Chat": {
+		"prefix": "vrp_dynamichat",
+		"body": [
+		  "exports['dynamic']:AddButton('title$1','desc$2','trigger$3','par$4','id$5','chat$6')"
+		],
+		"description": "Dynamic Chat"
+	},
+	"Dynamic Trigger": {
+		"prefix": "vrp_dynamictrigger",
+		"body": [
+		  "exports['dynamic']:AddButton('Desmanche$1','Listagem$2','king:in$3','','others$4',true)"
+		],
+		"description": "Dynamic Trigger"
+	},
+	"Dynamic Menu": {
+		"prefix": "vrp_dynamicmenu",
+		"body": [
+		  "exports['dynamic']:SubMenu('Title$1','Desc$2','chave$3')"
+		],
+		"description": "Dynamic Menu"
+	},
+	"Teleport Client": {
+		"prefix": "vrp_teleporteclients",
+		"body": [
+		  "SetEntityCoords(ped, x,y,z, 0, 0, 0, false)"
+		],
+		"description": "Teleport Client"
+	},
+	"hoverFly": {
+		"prefix": "vrp_hoverfly",
+		"body": [
+		  "local innerTable = {}",
+		  "for k,v in pairs() do",
+		  "\ttable.insert(innerTable,{ x,y,z,2,\"E\",\"Entrar\",\"Pressione para abrir\" })",
+		  "end",
+		  "TriggerEvent(\"hoverfy:insertTable\",innerTable)"
+		],
+		"description": "hoverFly"
+	},
+	  "drawtext3ds": {
+		"prefix": "vrp_drawtext3dfunc",
+		"body": [
+		  "function DrawText3Ds(x,y,z,text)",
+		  "\tSetTextFont(4)",
+		  "\tSetTextCentre(1)",
+		  "\tSetTextEntry('STRING')",
+		  "\tSetTextScale(0.35,0.35)",
+		  "\tSetTextColour(255,255,255,150)",
+		  "\tAddTextComponentString(text)",
+		  "\tSetDrawOrigin(x,y,z,0)",
+		  "\tDrawText(0.0,0.0)",
+		  "\tlocal factor = (string.len(text) / 375) + 0.01",
+		  "\tDrawRect(0.0,0.0125,factor,0.03,38,42,56,200)",
+		  "\tClearDrawOrigin()",
+		  "end"
+		],
+		"description": "Drawer Text 3d Func"
+	},
+	"drawtext3d": {
+		"prefix": "vrp_drawtext3d",
+		"body": [
+		  "DrawText3Ds(x,y,z,'~g~E~w~  KING')"
+		],
+		"description": "drawtext3d"
+	},
+	"drawTxt Func": {
+		"prefix": "vrp_drawtxtfunc",
+		"body": [
+		  "function drawTxt(text,font,x,y,scale,r,g,b,a)",
+		  "\tSetTextFont(font)",
+		  "\tSetTextScale(scale,scale)",
+		  "\tSetTextColour(r,g,b,a)",
+		  "\tSetTextOutline()",
+		  "\t--SetTextCentre(1)",
+		  "\tSetTextJustification(1)",
+		  "\tSetTextEntry('STRING')",
+		  "\tAddTextComponentString(text)",
+		  "\tDrawText(x,y)",
+		  "end"
+		],
+		"description": "drawTxt Func"
+	},
+	"drawTxt": {
+		"prefix": "vrp_drawtxt",
+		"body": [
+		  " drawTxt( 'F7 Para cancelar',4,0.17,0.95,0.30,255,255,255,180)"
+		],
+		"description": "drawTxt"
+	},
+	"Register Trigger": {
+		"prefix": "vrp_registertrigger",
+		"body": [
+		  "RegisterNetEvent('king')",
+		  "AddEventHandler('king',function(index)",
+		  "\t",
+		  "end)"
+		],
+		"description": "Register Trigger"
+	},
+	"Exports": {
+		"prefix": "vrp_exports",
+		"body": [
+		  "exports('verChaves',chaves)"
+		],
+		"description": "Exports"
+	},
+	"CriandoBlipFunc": {
+		"prefix": "vrp_criarblipfunc",
+		"body": [
+		  "function CriandoBlip(x,y,z,blip,cor,tamanho,nome)",
+		  "\tblips = AddBlipForCoord(x,y,z)",
+		  "\tSetBlipSprite(blips,blip)",
+		  "\tSetBlipColour(blips,cor)",
+		  "\tSetBlipScale(blips,tamanho)",
+		  "\tSetBlipAsShortRange(blips,false)",
+		  "\tSetBlipRoute(blips,true)",
+		  "\tBeginTextCommandSetBlipName(\"STRING\")",
+		  "\tAddTextComponentString(nome)",
+		  "\tEndTextCommandSetBlipName(blips)",
+		  "end"
+		],
+		"description": "CriandoBlipFunc"
+	},
+	"CriandoBlip": {
+		"prefix": "vrp_criarblip",
+		"body": [
+		  "CriandoBlip(x,y,z,blip,cor,0.4,'nome')"
+		],
+		"description": "CriandoBlip"
+	},
+	"SpawnNPCFunc": {
+		"prefix": "vrp_criarnpcfunc",
+		"body": [
+		  "function spawnNPC(x,y,z,h)",
+		  "\tlocal mHash = GetHashKey(pedHashs[math.random(#pedHashs)])",
+		  "\t",
+		  "\tRequestModel(mHash)",
+		  "\twhile not HasModelLoaded(mHash) do",
+		  "\t\tRequestModel(mHash)",
+		  "\t\tCitizen.Wait(10)",
+		  "\tend",
+		  "\t",
+		  "\tinPed = CreatePed(4,mHash,x,y,z-1,h,false,false)",
+		  "\tFreezeEntityPosition(inPed,true)",
+		  "\tSetPedSuffersCriticalHits(inPed,false)",
+		  "\tSetBlockingOfNonTemporaryEvents(inPed,true)",
+		  "\tSetModelAsNoLongerNeeded(mHash)",
+		  "end"
+		],
+		"description": "SpawnNPCFunc"
+	},
+	"SpawnNPC": {
+		"prefix": "vrp_criarnpc",
+		"body": [
+		  "spawnNPC(x,y,z,h)"
+		],
+		"description": "SpawnNPC"
+	},
+	"sugestaochat": {
+		"prefix": "vrp_susgchat",
+		"body": [
+		  "Citizen.CreateThread(function()",
+		  "\tTriggerEvent('chat:addSuggestion', '/rotas', 'Entregas e Coletas')",
+		  "end)"
+		],
+		"description": "sugestaochat"
+	},
+	"User Id e Source": {
+		"prefix": "vrp_userid",
+		"body": [
+		  "local source = source",
+		  "local user_id = vRP.getUserId(source)"
+		],
+		"description": "User Id e Source"
+	},
+	"vrp SQL Return": {
+		"prefix": "vrp_pegarsql",
+		"body": [
+		  "local SQLReturn = vRP.query('kg/get_kg',{ user_id = user_id })"
+		],
+		"description": "vrp SQL Return"
+	},
+	"vrp sql execute": {
+		"prefix": "vrp_executesql",
+		"body": [
+		  "vRP.execute(\"kg/check\", {king = king })"
+		],
+		"description": "vrp sql execute"
+	},
+	"vrp pegar id do source": {
+		"prefix": "vrp_idsource",
+		"body": [
+		  "local nuser_id = vRP.getUserId(nplayer)"
+		],
+		"description": "vrp pegar id do source"
+	},
+	"pegar identidade": {
+		"prefix": "vrp_identidade",
+		"body": [
+		  "local identity = vRP.getUserIdentity(user_id)"
+		],
+		"description": "pegar identidade"
+	},
+}
