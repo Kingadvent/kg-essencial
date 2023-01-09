@@ -46,5 +46,41 @@
 		  "});"
 		],
 		"description": "JavaScript"
+	},
+	"post": {
+		"prefix": "post",
+		"body": [
+		  "axios.post(\"https://$1/$2\",{ })"
+		],
+		"description": "post"
+	},
+	"post2": {
+		"prefix": "post2",
+		"body": [
+		  "axios.post(\"https://kg_concessionaria/close\",{ ",
+		  "  $1: $2",
+		  "})"
+		],
+		"description": "post"
+	},
+	"post3": {
+		"prefix": "post2",
+		"body": [
+		  "axios.post(\"https://kg_concessionaria/close\",{ ",
+		  "  $1: $2,",
+		  "  $3: $4",
+		  "})"
+		],
+		"description": "post"
+	},
+	"filtrar": {
+		"prefix": "filtrar",
+		"body": [
+		  "filteredList: function() {",
+		  "    const searchString = this.searchString.toLowerCase();",
+		  "    return this.vehicles.filter(item => item.nome.toLowerCase().includes(searchString));",
+		  "},"
+		],
+		"description": "filtrar"
 	}
 }

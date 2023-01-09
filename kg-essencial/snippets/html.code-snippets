@@ -24,5 +24,57 @@
 		  "</html>"
 		],
 		"description": "HTML KG"
-	}
+	},
+	"div": {
+		"prefix": "div",
+		"body": [
+		  "<div class=\"$1\">",
+		  "</div>"
+		],
+		"description": "div"
+	},
+	"img": {
+		"prefix": "img",
+		"body": [
+		  "<img src=\"./imagem/$1\" id=\"$2\">"
+		],
+		"description": "img"
+	},
+	"barra de pesquisa html": {
+		"prefix": "pesquisa",
+		"body": [
+		  "<input class=\"story\" type=\"text\" id=\"search\" placeholder=\"Pesquisar\" v-on:keyup='validateEmailAddress'>"
+		],
+		"description": "barra de pesquisa html"
+	},
+	"barra ranger": {
+		"prefix": "ranger",
+		"body": [
+		  "<input class=\"slider\" type=\"range\" value=\"0\" min=\"0\" max=\"100\" @input=\"inputRange($event)\"/>"
+		],
+		"description": "barra ranger"
+	},
+	"fordiv": {
+		"prefix": "fordiv",
+		"body": [
+		  "<div v-for=\"(item, index) in filteredList\" v-bind:key=\"vehicles\">",
+		  "</div>"
+		],
+		"description": "fordiv"
+	},
+	"ifdiv": {
+		"prefix": "ifdiv",
+		"body": [
+		  "<div v-if=\"\">",
+		  "</div>\"ifdiv\": {",
+		  "  \"prefix\": \"ifdiv\",",
+		  "  \"body\": [",
+		  "    \"<div v-if=\\\"$1\\\">\",",
+		  "    \"</div>\"",
+		  "  ],",
+		  "  \"description\": \"ifdiv\"",
+		  "}"
+		],
+		"description": "ifdiv"
+	},
 }
