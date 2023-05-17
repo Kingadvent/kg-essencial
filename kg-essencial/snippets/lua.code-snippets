@@ -1211,7 +1211,7 @@
 		"prefix": "vrp_userid",
 		"body": [
 		  "local source = source",
-		  "local user_id = vRP.getUserId(source)"
+		  "local user_id = vRP.Passport(source)"
 		],
 		"description": "User Id e Source"
 	},
