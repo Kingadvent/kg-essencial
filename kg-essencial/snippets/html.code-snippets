@@ -2,79 +2,113 @@
 	"HTML KG": {
 		"prefix": "html",
 		"body": [
-		  "<!DOCTYPE html>",
-		  "<html lang=\"en\">",
-		  "<head>",
-		  "    <meta charset=\"UTF-8\">",
-		  "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
-		  "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-		  "    <title>KG</title>    ",
-		  "    <link rel=\"stylesheet\" href=\"index.css\">",
-		  "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>",
-		  "    <script src=\"https://unpkg.com/axios/dist/axios.min.js\"></script>",
-		  "</head>",
-		  "<body>",
-		  "    <div id=\"app\">",
-		  "",
-		  "    </div>",
-		  "",
-		  "    <script src=\"https://cdn.jsdelivr.net/npm/vue@2\"></script>",
-		  "    <script type=\"text/javascript\" src=\"./index.js\"></script>",
-		  "</body>",
-		  "</html>"
+			"<!DOCTYPE html>",
+			"<html lang=\"pt-br\">",
+			"<head>",
+			"    <meta charset=\"UTF-8\">",
+			"    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+			"    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"    <title>KG</title>    ",
+			"    <link rel=\"stylesheet\" href=\"style.css\">",
+			"    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>",
+			"    <script src=\"https://unpkg.com/axios/dist/axios.min.js\"></script>",
+			"</head>",
+			"<body>",
+			"    <div id=\"app\">",
+			"",
+			"    </div>",
+			"",
+			"    <script src=\"https://cdn.jsdelivr.net/npm/vue@2\"></script>",
+			"    <script type=\"text/javascript\" src=\"script.js\"></script>",
+			"    <script src=\"https://unpkg.com/lucide@latest\"></script>",
+			"</body>",
+			"</html>"
 		],
 		"description": "HTML KG"
-	},
-	"div": {
-		"prefix": "div",
-		"body": [
-		  "<div class=\"$1\">",
-		  "</div>"
-		],
-		"description": "div"
 	},
 	"img": {
 		"prefix": "img",
 		"body": [
-		  "<img src=\"./imagem/$1\" id=\"$2\">"
+			"<img src=\"assets/$1\" id=\"$2\">"
 		],
 		"description": "img"
 	},
 	"barra de pesquisa html": {
 		"prefix": "pesquisa",
 		"body": [
-		  "<input class=\"story\" type=\"text\" id=\"search\" placeholder=\"Pesquisar\" v-on:keyup='validateEmailAddress'>"
+			"<input type=\"text\" v-model=\"digitoChave\" placeholder=\"Digite o id para dar a chave\" @keyup.enter=\"digitarChaves\">"
 		],
 		"description": "barra de pesquisa html"
 	},
 	"barra ranger": {
 		"prefix": "ranger",
 		"body": [
-		  "<input class=\"slider\" type=\"range\" value=\"0\" min=\"0\" max=\"100\" @input=\"inputRange($event)\"/>"
+			"<div class=\"range-slider\">",
+			"        <input type=\"range\" v-model=\"volume\" :min=\"min\" :max=\"max\" :step=\"step\" class=\"slider\" @input=\"updateProgress\">",
+			"        <div class=\"progress\" :style=\"{ width: volume + '%', left: thumbPosition + 'px' }\"></div>",
+			"    </div>"
 		],
-		"description": "barra ranger"
+		"description": "barra ranger css"
 	},
 	"fordiv": {
 		"prefix": "fordiv",
 		"body": [
-		  "<div v-for=\"(item, index) in filteredList\" v-bind:key=\"vehicles\">",
-		  "</div>"
+			"<div v-for=\"(item, index) in filteredList\" v-bind:key=\"vehicles\">",
+			"</div>"
 		],
 		"description": "fordiv"
 	},
 	"ifdiv": {
 		"prefix": "ifdiv",
 		"body": [
-		  "<div v-if=\"\">",
-		  "</div>\"ifdiv\": {",
-		  "  \"prefix\": \"ifdiv\",",
-		  "  \"body\": [",
-		  "    \"<div v-if=\\\"$1\\\">\",",
-		  "    \"</div>\"",
-		  "  ],",
-		  "  \"description\": \"ifdiv\"",
-		  "}"
+			"<div v-if=\"\">",
+			"</div>\"ifdiv\": {",
+			"  \"prefix\": \"ifdiv\",",
+			"  \"body\": [",
+			"    \"<div v-if=\\\"$1\\\">\",",
+			"    \"</div>\"",
+			"  ],",
+			"  \"description\": \"ifdiv\"",
+			"}"
 		],
 		"description": "ifdiv"
+	},
+	"opções": {
+		"prefix": "select",
+		"body": [
+			"<div class=\"select\">",
+			"                        <div id=\"category-select\">",
+			"                            <label for=\"options-view-button\">Opções de Sons</label>",
+			"                            <input type=\"checkbox\" id=\"options-view-button\" v-model=\"toggle\">",
+			"            ",
+			"                            <div id=\"select-button\">",
+			"                                <div id=\"selected-value\" v-html=\"opcaoSom\"></div>",
+			"",
+			"                                <div id=\"chevrons\">",
+			"                                    <i data-lucide=\"chevron-down\"></i> <!-- Dentro coloque o nome do SVG do site -->",
+			"                                    <i data-lucide=\"chevron-up\"></i>",
+			"                                </div>",
+			"                            </div>",
+			"                        </div>",
+			"",
+			"                        <ul id=\"options\">",
+			"                            <div v-for=\"(item, index) in SomPortas\">",
+			"                                <li class=\"option\">",
+			"                                    <input ",
+			"                                    type=\"radio\"",
+			"                                    name=\"category\"",
+			"                                    value=\"bakery\"",
+			"                                    data-label=item.nome",
+			"                                    v-on:click=\"escolhaSom(index,item.nome)\"",
+			"                                >",
+			"                                    <i data-lucide=\"sandwich\"></i>",
+			"                                    <span class=\"label\" v-html=\"item.nome\"></span>",
+			"                                    <i data-lucide=\"check\"></i>",
+			"                                </li>",
+			"                            </div>",
+			"                        </ul>",
+			"                    </div>"
+		],
+		"description": "opções"
 	},
 }
