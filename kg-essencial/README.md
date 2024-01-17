@@ -42,6 +42,8 @@ vue - Inicia o uso do Vue.js em um projeto, permitindo a criação de componente
 
 post - Permite a comunicação com um servidor para enviar ou receber dados, tornando possível a construção de aplicativos com funcionalidades de back-end.
 
+axios_post - Permite a comunicação com um servidor para enviar ou receber dados, tornando possível a construção de aplicativos com funcionalidades de back-end.
+
 filtrar - Permite a filtragem e transformação de dados exibidos em um componente Vue.
 
 slider - Implementa componentes deslizantes para escolher valores de forma interativa.

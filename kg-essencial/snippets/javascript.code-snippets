@@ -51,9 +51,16 @@
 	"post": {
 		"prefix": "post",
 		"body": [
-			"axios.post(\"https://$1/$2\",{ })"
+			"$.post(\"https://$1/$2\",JSON.stringify({ }))"
 		],
 		"description": "post"
+	},
+	"axios_post": {
+		"prefix": "axios_post",
+		"body": [
+			"axios.post(\"https://$1/$2\",{ })"
+		],
+		"description": "axios_post"
 	},
 	"filtrar": {
 		"prefix": "filtrar",
